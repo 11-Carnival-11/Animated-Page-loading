@@ -1,0 +1,150 @@
+* { box-sizing: border-box;}
+
+body { margin: 0; }
+
+.head {
+    margin: auto 0;
+    padding: auto;
+    width: 100%;
+    height: 45px;
+    background-color: hsla(224, 87%, 25%, 0.75);
+    animation-name: head-load;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in;
+}
+
+.headlist {
+    margin: auto 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    /* border: 2px solid yellow; */
+}
+
+.headlist li {
+    font-size: larger;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    width: 33.33%;
+    vertical-align: middle;
+    text-align: center;
+    /* border: 2px solid rgb(145, 126, 126); */
+}
+
+.headlist li:hover {
+    background-color: hsla(224, 87%, 15%, 0.75);
+}
+
+.headlist li a {
+    color: white;
+    text-decoration: none;
+}
+
+.headlist li:first-child { border-right: 2px solid white; }
+
+.headlist li:last-child { border-left: 2px solid white; }
+
+.main, .anotherstory {
+    margin: auto 13px;
+    padding: auto;
+}
+
+.main p, .anotherstory p {
+    font-weight: 300;
+    font-size: 1.2em;
+    max-width: 80%;
+    justify-content: center;
+}
+
+.main h2, .anotherstory h2 {
+    font-weight:700;
+}
+
+main { margin-top: 40px;}
+
+@keyframes head-load {
+    0% { transform: translateY(-100%);}
+    100% { transform: translateY(0);}
+}
+
+@keyframes home-load {
+    0% { transform: translateX(-150%);}
+    100% { transform: translateX(0);}
+}
+
+@keyframes about-load {
+    0% { transform: scale(0);}
+    100% { transform: scale(1);}
+}
+
+@keyframes contact-load {
+    0% { transform: translateX(150%);}
+    100% { transform: translateX(0);}
+}
+
+.headlist li:first-child {
+    animation-name: home-load;
+    animation-duration: 900ms;
+    animation-timing-function: ease-in;
+}
+
+.headlist li:nth-child(2) {
+    animation-name: about-load;
+    animation-duration: 810ms;
+    animation-timing-function: ease-in;
+}
+
+.headlist li:last-child {
+    animation-name: contact-load;
+    animation-duration: 900ms;
+    animation-timing-function: ease-in;
+}
+
+h2 {
+    animation-name: heading-load;
+    animation-duration: 980ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes heading-load {
+    0% { 
+        opacity:0; 
+        transform: translateY(-500%);
+    }
+
+    60% { opacity: 0;}
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+p {
+    animation-name: paragraph-load;
+    animation-duration: 1150ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes paragraph-load {
+    0% { 
+        opacity:0; 
+        transform: translateY(-500%);
+    }
+
+    80% { opacity: 0;}
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
